@@ -2,5 +2,249 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "wcx-ui": {
+      "projectType": "library",
+      "root": "projects/wcx-ui",
+      "sourceRoot": "projects/wcx-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/wcx-ui/tsconfig.lib.json",
+            "project": "projects/wcx-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wcx-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wcx-ui/src/test.ts",
+            "tsConfig": "projects/wcx-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/wcx-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wcx-ui/tsconfig.lib.json",
+              "projects/wcx-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "wcx-entity": {
+      "projectType": "library",
+      "root": "projects/wcx-entity",
+      "sourceRoot": "projects/wcx-entity/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/wcx-entity/tsconfig.lib.json",
+            "project": "projects/wcx-entity/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wcx-entity/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wcx-entity/src/test.ts",
+            "tsConfig": "projects/wcx-entity/tsconfig.spec.json",
+            "karmaConfig": "projects/wcx-entity/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wcx-entity/tsconfig.lib.json",
+              "projects/wcx-entity/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "wcx-auth": {
+      "projectType": "library",
+      "root": "projects/wcx-auth",
+      "sourceRoot": "projects/wcx-auth/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/wcx-auth/tsconfig.lib.json",
+            "project": "projects/wcx-auth/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wcx-auth/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wcx-auth/src/test.ts",
+            "tsConfig": "projects/wcx-auth/tsconfig.spec.json",
+            "karmaConfig": "projects/wcx-auth/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wcx-auth/tsconfig.lib.json",
+              "projects/wcx-auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "intent-guide-core": {
+      "projectType": "library",
+      "root": "projects/intent-guide-core",
+      "sourceRoot": "projects/intent-guide-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/intent-guide-core/tsconfig.lib.json",
+            "project": "projects/intent-guide-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/intent-guide-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/intent-guide-core/src/test.ts",
+            "tsConfig": "projects/intent-guide-core/tsconfig.spec.json",
+            "karmaConfig": "projects/intent-guide-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/intent-guide-core/tsconfig.lib.json",
+              "projects/intent-guide-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "intent-guide-domain": {
+      "projectType": "library",
+      "root": "projects/intent-guide-domain",
+      "sourceRoot": "projects/intent-guide-domain/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/intent-guide-domain/tsconfig.lib.json",
+            "project": "projects/intent-guide-domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/intent-guide-domain/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/intent-guide-domain/src/test.ts",
+            "tsConfig": "projects/intent-guide-domain/tsconfig.spec.json",
+            "karmaConfig": "projects/intent-guide-domain/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/intent-guide-domain/tsconfig.lib.json",
+              "projects/intent-guide-domain/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "intent-guide-state": {
+      "projectType": "library",
+      "root": "projects/intent-guide-state",
+      "sourceRoot": "projects/intent-guide-state/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/intent-guide-state/tsconfig.lib.json",
+            "project": "projects/intent-guide-state/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/intent-guide-state/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/intent-guide-state/src/test.ts",
+            "tsConfig": "projects/intent-guide-state/tsconfig.spec.json",
+            "karmaConfig": "projects/intent-guide-state/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/intent-guide-state/tsconfig.lib.json",
+              "projects/intent-guide-state/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": "28444f96-6116-42ca-a583-25eb2c7e23cb"
+  },
+  "defaultProject": "wcx-ui"
 }
