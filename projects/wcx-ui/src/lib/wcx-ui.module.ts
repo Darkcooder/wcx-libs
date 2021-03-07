@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { EntityModule } from "./entity/entity.module";
 import { WcxAppHeaderModule } from "./structural/wcx-app-header/wcx-app-header.module";
 import { WcxAppSidebarModule } from "./structural/wcx-app-sidebar/wcx-app-sidebar.module";
 import { WcxAppWrapperModule } from "./structural/wcx-app-wrapper/wcx-app-wrapper.module";
@@ -12,14 +13,16 @@ import { WcxPageHeaderModule } from "./structural/wcx-page-header/wcx-page-heade
     WcxAppSidebarModule,
     WcxAppWrapperModule,
     WcxListPageModule,
-    WcxPageHeaderModule
+    WcxPageHeaderModule,
+    EntityModule,
   ],
   exports: [
     WcxAppHeaderModule,
     WcxAppSidebarModule,
     WcxAppWrapperModule,
     WcxListPageModule,
-    WcxPageHeaderModule
+    WcxPageHeaderModule,
+    EntityModule,
   ]
 })
 export class WcxUiModule { }
