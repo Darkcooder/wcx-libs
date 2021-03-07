@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/wcx-ui",
       "sourceRoot": "projects/wcx-ui/src",
-      "prefix": "lib",
+      "prefix": "wcx",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -47,7 +47,7 @@
       "projectType": "library",
       "root": "projects/wcx-entity",
       "sourceRoot": "projects/wcx-entity/src",
-      "prefix": "lib",
+      "prefix": "wcx",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -87,7 +87,7 @@
       "projectType": "library",
       "root": "projects/wcx-auth",
       "sourceRoot": "projects/wcx-auth/src",
-      "prefix": "lib",
+      "prefix": "wcx",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -123,51 +123,11 @@
         }
       }
     },
-    "intent-guide-core": {
-      "projectType": "library",
-      "root": "projects/intent-guide-core",
-      "sourceRoot": "projects/intent-guide-core/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/intent-guide-core/tsconfig.lib.json",
-            "project": "projects/intent-guide-core/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/intent-guide-core/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/intent-guide-core/src/test.ts",
-            "tsConfig": "projects/intent-guide-core/tsconfig.spec.json",
-            "karmaConfig": "projects/intent-guide-core/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/intent-guide-core/tsconfig.lib.json",
-              "projects/intent-guide-core/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "intent-guide-domain": {
       "projectType": "library",
       "root": "projects/intent-guide-domain",
       "sourceRoot": "projects/intent-guide-domain/src",
-      "prefix": "lib",
+      "prefix": "igu",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -207,7 +167,7 @@
       "projectType": "library",
       "root": "projects/intent-guide-state",
       "sourceRoot": "projects/intent-guide-state/src",
-      "prefix": "lib",
+      "prefix": "igu",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -237,8 +197,130 @@
               "projects/intent-guide-state/tsconfig.spec.json"
             ],
             "exclude": [
+              "**/node_modules/**",
+              "**/dist/**"
+            ]
+          }
+        }
+      }
+    },
+    "fitgame": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        }
+      },
+      "root": "projects/fitgame",
+      "sourceRoot": "projects/fitgame/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/fitgame",
+            "index": "projects/fitgame/src/index.html",
+            "main": "projects/fitgame/src/main.ts",
+            "polyfills": "projects/fitgame/src/polyfills.ts",
+            "tsConfig": "projects/fitgame/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/fitgame/src/favicon.ico",
+              "projects/fitgame/src/assets"
+            ],
+            "styles": [
+              "projects/fitgame/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/fitgame/src/environments/environment.ts",
+                  "with": "projects/fitgame/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "fitgame:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "fitgame:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "fitgame:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fitgame/src/test.ts",
+            "polyfills": "projects/fitgame/src/polyfills.ts",
+            "tsConfig": "projects/fitgame/tsconfig.spec.json",
+            "karmaConfig": "projects/fitgame/karma.conf.js",
+            "assets": [
+              "projects/fitgame/src/favicon.ico",
+              "projects/fitgame/src/assets"
+            ],
+            "styles": [
+              "projects/fitgame/src/styles.less"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fitgame/tsconfig.app.json",
+              "projects/fitgame/tsconfig.spec.json",
+              "projects/fitgame/e2e/tsconfig.json"
+            ],
+            "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/fitgame/e2e/protractor.conf.js",
+            "devServerTarget": "fitgame:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "fitgame:serve:production"
+            }
           }
         }
       }
