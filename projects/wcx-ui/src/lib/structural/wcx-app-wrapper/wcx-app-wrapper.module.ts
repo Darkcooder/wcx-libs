@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatSidenavModule } from "@angular/material/sidenav";
 import { WcxAppWrapperComponent } from './wcx-app-wrapper.component';
 import { WcxAppContentDirective } from './directives/wcx-app-content.directive';
 
@@ -8,7 +9,8 @@ import { WcxAppContentDirective } from './directives/wcx-app-content.directive';
 @NgModule({
   declarations: [WcxAppWrapperComponent, WcxAppContentDirective],
   imports: [
-    CommonModule
+    CommonModule,
+    MatSidenavModule
   ],
   exports: [WcxAppWrapperComponent, WcxAppContentDirective]
 })

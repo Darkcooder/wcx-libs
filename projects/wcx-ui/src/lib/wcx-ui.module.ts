@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule, NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { EntityModule } from "./entity/entity.module";
 import { WcxAppHeaderModule } from "./structural/wcx-app-header/wcx-app-header.module";
 import { WcxAppSidebarModule } from "./structural/wcx-app-sidebar/wcx-app-sidebar.module";
