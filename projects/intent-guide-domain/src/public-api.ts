@@ -11,7 +11,7 @@ export * from './lib/execution-layer/action.model';
 export * from './lib/execution-layer/execution.model';
 export * from './lib/execution-layer/parameter.model';
 
-export * from './lib/metodic-layer/action.model.js';
+export * from './lib/metodic-layer/action.model';
 export * from './lib/metodic-layer/parameter.model';
 export * from './lib/metodic-layer/metodic.model';
 
