@@ -30,14 +30,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/wcx-ui/tsconfig.lib.json",
-              "projects/wcx-ui/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/wcx-ui/**/*.ts",
+              "projects/wcx-ui/**/*.html"
             ]
           }
         }
@@ -299,15 +296,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/fitgame/tsconfig.app.json",
-              "projects/fitgame/tsconfig.spec.json",
-              "projects/fitgame/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/fitgame/**/*.ts",
+              "projects/fitgame/**/*.html"
             ]
           }
         },
@@ -324,7 +317,8 @@
           }
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": "28444f96-6116-42ca-a583-25eb2c7e23cb"
   },

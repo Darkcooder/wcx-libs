@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { WcxAppWrapperComponent } from './wcx-app-wrapper.component';
 import { WcxAppContentDirective } from './directives/wcx-app-content.directive';
+import {TuiRootModule} from "@taiga-ui/core";
 
 
 
@@ -10,7 +11,9 @@ import { WcxAppContentDirective } from './directives/wcx-app-content.directive';
   declarations: [WcxAppWrapperComponent, WcxAppContentDirective],
   imports: [
     CommonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    TuiRootModule,
+    TuiRootModule
   ],
   exports: [WcxAppWrapperComponent, WcxAppContentDirective]
 })
