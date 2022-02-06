@@ -1,17 +1,21 @@
-<div class="wrapper">
-  <div class="logo">
-    <ng-content select="wcx-card-logo"></ng-content>
+<tui-island class="wrapper">
+  <div class="info">
+    <div class="logo tui-island-figure">
+      <tui-avatar *ngIf="name" [text]="name"></tui-avatar>
+      <ng-content select="wcx-card-logo"></ng-content>
+    </div>
+    <div class="title tui-island__title">
+      {{name || ''}}
+      <ng-content select="wcx-card-title"></ng-content>
+    </div>
+    <div class="description tui-island__paragraph">
+      <ng-content select="wcx-card-description"></ng-content>
+    </div>
+    <div class="options">
+      <ng-content select="wcx-card-options"></ng-content>
+    </div>
   </div>
-  <div class="title">
-    <ng-content select="wcx-card-title"></ng-content>
-  </div>
-  <div class="description">
-    <ng-content select="wcx-card-description"></ng-content>
-  </div>
-  <div class="options">
-    <ng-content select="wcx-card-options"></ng-content>
-  </div>
-  <div class="content">
+  <tui-scrollbar class="content">
     <ng-content select="wcx-card-content"></ng-content>
-  </div>
-</div>
+  </tui-scrollbar>
+</tui-island>

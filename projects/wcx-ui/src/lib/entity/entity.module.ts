@@ -7,6 +7,8 @@ import { CardTitleDirective } from './directives/card-title.directive';
 import { CardDescriptionDirective } from './directives/card-description.directive';
 import { CardOptionsDirective } from './directives/card-options.directive';
 import { CardContentDirective } from './directives/card-content.directive';
+import {TuiAvatarModule, TuiIslandModule, TuiMarkerIconModule} from "@taiga-ui/kit";
+import {TuiScrollbarModule} from "@taiga-ui/core";
 
 
 
@@ -21,7 +23,12 @@ import { CardContentDirective } from './directives/card-content.directive';
     CardContentDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TuiIslandModule,
+    TuiAvatarModule,
+    TuiIslandModule,
+    TuiMarkerIconModule,
+    TuiScrollbarModule,
   ],
   exports: [
     LgCardComponent,

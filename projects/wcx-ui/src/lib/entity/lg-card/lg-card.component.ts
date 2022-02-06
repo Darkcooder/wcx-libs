@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'wcx-lg-card',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lg-card.component.less']
 })
 export class LgCardComponent implements OnInit {
+
+  @Input() name: string;
 
   constructor() { }
 
