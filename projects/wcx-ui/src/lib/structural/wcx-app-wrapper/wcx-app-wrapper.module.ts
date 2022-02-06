@@ -13,6 +13,8 @@ import {TuiRootModule} from "@taiga-ui/core";
     CommonModule,
     MatSidenavModule,
     TuiRootModule,
+    TuiRootModule,
+    TuiRootModule,
     TuiRootModule
   ],
   exports: [WcxAppWrapperComponent, WcxAppContentDirective]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'wcx-app-header',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wcx-app-header.component.less']
 })
 export class WcxAppHeaderComponent implements OnInit {
+
+  @Input() name = 'Application name';
 
   constructor() { }
 

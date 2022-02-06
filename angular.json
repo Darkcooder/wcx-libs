@@ -9,18 +9,6 @@
       "sourceRoot": "projects/wcx-ui/src",
       "prefix": "wcx",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/wcx-ui/tsconfig.lib.json",
-            "project": "projects/wcx-ui/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/wcx-ui/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -46,18 +34,6 @@
       "sourceRoot": "projects/wcx-entity/src",
       "prefix": "wcx",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/wcx-entity/tsconfig.lib.json",
-            "project": "projects/wcx-entity/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/wcx-entity/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -226,7 +202,9 @@
               "projects/fitgame/src/assets"
             ],
             "styles": [
-              "projects/fitgame/src/styles.less"
+              "projects/fitgame/src/styles.less",
+              "node_modules/@taiga-ui/core/styles/taiga-ui-global.less",
+              "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less"
             ],
             "scripts": []
           },

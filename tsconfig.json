@@ -17,27 +17,21 @@
     ],
     "paths": {
       "wcx-ui": [
-        "dist/wcx-ui/wcx-ui",
-        "dist/wcx-ui"
+        "./projects/wcx-ui/src/public-api.ts"
       ],
       "wcx-entity": [
-        "dist/wcx-entity/wcx-entity",
-        "dist/wcx-entity"
+        "./projects/wcx-entity/src/public-api.ts"
       ],
       "wcx-auth": [
-        "dist/wcx-auth/wcx-auth",
         "dist/wcx-auth"
       ],
       "intent-guide-core": [
-        "dist/intent-guide-core/intent-guide-core",
         "dist/intent-guide-core"
       ],
       "intent-guide-domain": [
-        "dist/intent-guide-domain/intent-guide-domain",
         "dist/intent-guide-domain"
       ],
       "intent-guide-state": [
-        "dist/intent-guide-state/intent-guide-state",
         "dist/intent-guide-state"
       ]
     }

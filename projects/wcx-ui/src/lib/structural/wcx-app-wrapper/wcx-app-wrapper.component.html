@@ -9,7 +9,9 @@
           <ng-content select="wcx-app-sidebar"></ng-content>
         </mat-drawer>
         <mat-drawer-content>
-          <ng-content select="wcx-app-content"></ng-content>
+          <div class="content">
+            <ng-content select="wcx-app-content"></ng-content>
+          </div>
         </mat-drawer-content>
       </mat-drawer-container>
     </div>
